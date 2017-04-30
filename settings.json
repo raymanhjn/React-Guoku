@@ -1,0 +1,7 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb://user:user@ds019796.mlab.com:19796/guokudb"
+    }
+  }
+}

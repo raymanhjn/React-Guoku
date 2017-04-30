@@ -1,0 +1,173 @@
+/* CSS declarations go here */
+.app {
+	position: relative;
+}
+
+.hidden {
+	display: none;
+}
+
+.visible {
+	display:block;
+}
+
+.ui.active.dimmer {
+	position:fixed;
+}
+
+.ui.active.dimmer .buycart{
+	margin:100px auto;
+	width: 80%;
+	background-color: white;
+}
+
+.ui.table {
+	width: 80%;
+	margin:auto;
+}
+
+.ui.table:first-child {
+    margin-top: 10em;
+}
+
+.dropzone {
+	width: 100px;
+	height: 100px;
+	border: 2px dashed rgb(102, 102, 102);
+    border-radius: 5px;
+}
+
+.dropzone img {
+	width: 100%;
+	height: 100%;
+}
+
+.cart {
+	position:fixed;
+	bottom: 10%;
+	right:5%;
+	height:;
+}
+
+.profileAvator {
+	width: 50px;
+	height: 50px; 	
+}
+
+.cart-trigger {
+	content:'';
+	position: fixed;
+	z-index: 3;
+    height: 72px;
+    width: 72px;
+    bottom:40px;
+    right: 5%;
+    border-radius: 6px 6px 6px 6px;
+    text-indent: 100%;
+    color: transparent;
+    white-space: nowrap;
+	background:url('https://codyhouse.co/demo/add-to-cart-interaction/img/cd-icons-cart-close.svg') no-repeat 0 0;
+	background-color:#ffffff; 
+	box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cart-trigger .count {
+	list-style: none;
+	position: absolute;
+	top: -22px;
+	right: -10px;
+	width: 25px;
+	height: 25px;
+	background: #e94b35;
+	color: #ffffff;
+	padding: 0;
+	border-radius: 50%
+}
+
+.cart-trigger .count li {
+    position: absolute;
+    left: -16px;
+    top: 3px;
+}
+
+.ui.secondary.menu {
+	background: #ffffff;
+}
+
+.main {
+	padding-top: 60px;
+}
+
+.masthead.segment {
+    min-height: 500px;
+    padding: 1em 0em;
+}
+
+.masthead h1.ui.header {
+    margin-top: 1.5em;
+    margin-bottom: 0em;
+    font-size: 4em;
+    font-weight: normal;
+}
+
+.category-content {
+	text-align: center;
+	font-size:14px;
+	color: #212121;
+}
+
+.detail-img {
+	max-width: 320px;
+}
+
+.ui.secondary.pointing.menu .item {
+	max-height: 42px;
+}
+
+.ui.secondary.menu .dropdown.item > .menu, .ui.text.menu .dropdown.item > .menu {
+	margin-top: 0.1rem;
+}
+
+.ui.comments {
+    max-width: 700px;
+}
+
+.likeAndComment {
+	list-style-type:disc;
+	display: block;
+}
+
+.likeAndComment li{
+	display: inline-block;
+	color: #9D9E9F;
+    font-size: 13px;
+}
+
+.seperator {
+	margin:0 5px;
+	color:#212121;
+}
+
+.recommend-image {
+	width: 100%;
+	display: inline-block;
+}
+
+.loginPage .column {
+	margin-top: 200px;
+	max-width: 450px;
+}
+
+.linkImage-text {
+	text-align: center;
+	font-size: 14px;
+	color: #212121;
+}
+
+.ui.breadcrumb {
+    margin: 1em 0em;
+}
+
+.ui.reply.form.visible .field textarea {
+	height: 6em;
+}
