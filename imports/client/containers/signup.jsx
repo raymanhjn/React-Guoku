@@ -16,6 +16,7 @@ import FormInput from '../widgets/form-input';
 const fields = ['firstName','lastName','email','password','repassword'];
 
 class Signup extends Component{
+
 	componentWillMount() {
 		this.props.hideHeader(true);
 	}
@@ -27,6 +28,7 @@ class Signup extends Component{
 
 	onFormSubmit(userProps) {
 		let {dropImage}=this.props;
+		console.log(userProps);
 		if(dropImage==''){
 			let url = 'http://semantic-ui.com/images/avatar/small/elliot.jpg';
 			this.props.signup(userProps,url);
@@ -44,7 +46,6 @@ class Signup extends Component{
 	onDrop(file) {
 		this.props.drop_image(file[0]);
 	}
-
 	renderInDropzone() {
 		let {dropImage}=this.props;
 		return dropImage==''?<div></div>:<img src={dropImage}/>;
@@ -147,6 +148,5 @@ function mapStateToProps(state) {
 
 export default reduxForm({
 	form:'userForm',
-	fields:fields,
-	validate
+	fields:fields
 },mapStateToProps,{signup,hideHeader,drop_image,clean_drop_image})(Signup);

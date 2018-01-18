@@ -19,10 +19,12 @@ class Login extends Component{
 	}
 
 	onFormSubmit(props) {
+		console.log(props);
 		this.props.login(props);
 	}
 	render() {
 		const { fields: { email, password }, handleSubmit,login_error } = this.props;
+		console.log(this.props);
 		return (
 			<div className='ui middle aligned center aligned grid loginPage'>
 				<div className='column'>
@@ -39,8 +41,7 @@ class Login extends Component{
 					            <input type="email" ref='emailAddress' placeholder="Email Address" {...email}/>
 					            <i className="user icon"></i>
 					          </div>
-					          <div className={`${email.touched && email.invalid?'ui pointing red basic label':''}` }>
-						        {email.touched?email.error:""}
+					          <div>
 						      </div>
 					        </div>
 					        <div className="field">
@@ -48,15 +49,13 @@ class Login extends Component{
 					            <input type="password" ref='password' placeholder="Password" {...password}/>
 					            <i className="lock icon"></i>
 					          </div>
-					          <div className={`${password.touched && password.invalid?'ui pointing red basic label':''}`}>
-						        {password.touched?password.error:""}
+					          <div>
 						      </div>
 					        </div>
 					        <div className='divider'></div>
 					        <div className={`field ui error message ${login_error?'visible':'hidden'}`}>{this.props.login_error}</div>
 				        	<button className="ui primary fluid button" type="submit">Log In</button>
 				        </div>
-				        
 					</form>
 
 					<div className="ui message">
@@ -68,23 +67,23 @@ class Login extends Component{
 	}
 }
 
-function validate(values) {
-  const errors = {};
-  if(!values.email){
-    errors.email = "Please Enter an Email";
-  }else{
-    let regx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    errors.email = regx.test(values.email)?"":"Please Enter Valid Email Address";
-  }
-
-  if(!values.password){
-    errors.password = "Please Enter a password";
-  }else {
-    let regx = /^\d{6}$/;
-    errors.password = regx.test(values.password)?"":"Please Enter 6-digit Number";
-  }
-  return errors;
-}
+// function validate(values) {
+//   const errors = {};
+//   if(!values.email){
+//     errors.email = "Please Enter an Email";
+//   }else{
+//     let regx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//     errors.email = regx.test(values.email)?"":"Please Enter Valid Email Address";
+//   }
+//
+//   if(!values.password){
+//     errors.password = "Please Enter a password";
+//   }else {
+//     let regx = /^\d{6}$/;
+//     errors.password = regx.test(values.password)?"":"Please Enter 6-digit Number";
+//   }
+//   return errors;
+// }
 
 
 function mapStateToProps(state) {
@@ -95,6 +94,5 @@ function mapStateToProps(state) {
 
 export default reduxForm({
 	form:'login',
-	fields:fields,
-	validate
+	fields:['email','password']
 },mapStateToProps,{login,hideHeader})(Login);

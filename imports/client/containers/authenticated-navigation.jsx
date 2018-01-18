@@ -11,13 +11,10 @@ class AuthenticatedNavigation extends Component {
 	}
 
 	render() {
-		return (				
+		return (
 				<div className="right menu">
 				  <Link className="ui item" to='/products/create'>
 				  	<i className='plus icon'></i>
-				  </Link>
-				  <Link className="ui item" to='/products/create'>
-				  	<i className='alarm outline icon'></i>
 				  </Link>
 				  <div className="ui simple dropdown item">
 					  	<img className="ui avatar image" src={this.props.userProfile.avator} />
