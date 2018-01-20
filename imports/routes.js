@@ -32,7 +32,7 @@ export default (
 			<Route path='create' component={AddProduct} />
 			<Route path=':prodId' component={ProductDetail} />
 		</Route>
-		<Route path='articles' component={Articles} />
+		// <Route path='articles' component={Articles} />
 		<Route path="*" component={ NotFound } />
 	</Route>
 

@@ -11,12 +11,6 @@ import {getProducts} from '../actions/product-action';
 
 
 class Products extends Component{
-	// componentWillMount() {
-	// 	const {query} =this.props.location;
-	// 	const category = (query&&query.category)?query.category:'';
-	// 	this.props.getProducts(category);
-	// }
-
 	renderCard() {
 		return this.props.products.map((product) => {
 			return <ProductCard key={product._id} product={product}/>
@@ -39,23 +33,17 @@ class Products extends Component{
 					{this.renderCard()}
 				</div>
 			</div>
-			
+
 		);
 	}
 }
-// function mapStateToProps({products}) {
-// 	return {
-// 		products
-// 	}
-// }
-// export default connect(mapStateToProps,{getProducts})(Products);
 
 
 export default createContainer( ({location:{query}})=>{
 	const category = query&&query.category?query.category:''
 	Meteor.subscribe('getProducts');
 	const products = category?ProductsData.find({brand:category},{sort:{ createAt: -1 }}).fetch() : ProductsData.find({},{sort:{ createAt: -1 }}).fetch()
-	return {		
+	return {
 		products: products
 	};
 },Products);

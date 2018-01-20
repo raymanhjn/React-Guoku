@@ -67,7 +67,7 @@ class Index extends Component {
 	renderCategoryIcon() {
 		return categories.map((category) => {
 			let url = `/products?category=${category.name.toLowerCase()}`;
-			let image= `http://static.guoku.com/static/v4/7ce41099b4766ad0cd4e68866ee56d61502fffcf/images/category-icon/${category.imageUrl}.png`;
+			let image= `https://www.guoku.com/static/images/category-icon/${category.imageUrl}.png`;
 			return <LinkImage key={category.name} url={url} image={image} text={category.name}/>
 		});
 	}
@@ -86,21 +86,21 @@ class Index extends Component {
 				    </div>
 				    <div className="ui text container">
 				      <h1 className="ui inverted header">
-				        Imagine-a-Company
+				        Welcome to React guoku
 				      </h1>
-				      <h2>Do whatever you want when you want to.</h2>
+				      <h2>Share and enjoy your fancy stuff with others</h2>
 				      <Link className="ui huge primary button" to='/products'>Get Started <i className="right arrow icon"></i></Link>
 				    </div>
 			    </div>
-			  
+
 			    <div className="ui vertical stripe segment">
 				    <div className="ui middle aligned stackable grid container">
 				      <div className="row">
 				        <div className="eight wide column">
-				          <h3 className="ui header">We Help Companies and Companions</h3>
-				          <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
-				          <h3 className="ui header">We Make Bananas That Can Dance</h3>
-				          <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+				          <h3 className="ui header">You can share your stuff</h3>
+				          <p>Come and share the good item you have ever purchased.</p>
+				          <h3 className="ui header">Also, you can explore fancy goods</h3>
+				          <p>Explore stuff others recommended.</p>
 				        </div>
 				        <div className="six wide right floated column">
 				          <img src="http://imgcdn.guoku.com/images/310/0c24d15141b74cc5ca7f7d8ac31afd84.jpg" className="ui large bordered rounded image" />
@@ -157,7 +157,7 @@ class Index extends Component {
 			</div>
 		);
 	}
-}	
+}
 
 const IndexContainer = createContainer(() => {
 	Meteor.subscribe('getProducts');

@@ -24,12 +24,11 @@ class Login extends Component{
 	}
 	render() {
 		const { fields: { email, password }, handleSubmit,login_error } = this.props;
-		console.log(this.props);
 		return (
 			<div className='ui middle aligned center aligned grid loginPage'>
 				<div className='column'>
 					<h2 className='ui teal image header'>
-						<img className='image' src='' alt='logo'/>
+						<i className="address book icon"></i>
 						<div className="content">
 					        Log-in to your account
 					    </div>

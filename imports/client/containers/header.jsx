@@ -21,8 +21,7 @@ class Header extends Component {
 			    <div className='header item'>React-Guoku</div>
 			    <Link className={`item ${this.props.active===1?'active':''}`}  to='/'>Home</Link>
 			    <Link className={`item ${this.props.active===2?'active':''}`} to='/products'>Products</Link>
-			    <Link className={`item ${this.props.active===3?'active':''}`} to='/articles'>Articles</Link>
-			    {this.renderRight()}
+			  	{this.renderRight()}
 			  </div>
 			</div>
 		);
